@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>{{ $header }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-full">
@@ -23,6 +23,7 @@
             <div class="shrink-0">
                 <img class="size-8" src="https://www.logo.wine/a/logo/Laravel/Laravel-Logo.wine.svg" alt="Your Company">
             </div>
+
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -32,10 +33,10 @@
                 :type="request()->is('/') ? 'button' : 'a'"
                 >Home</x-nav-links>
                 <x-nav-links
-                href="/about"
-                :active="request()->is('about')"
-                :type="request()->is('about') ? 'button' : 'a'"
-                >About</x-nav-links>
+                href="/jobs"
+                :active="request()->is('jobs')"
+                :type="request()->is('jobs') ? 'button' : 'a'"
+                >Jobs</x-nav-links>
                 <x-nav-links
                 href="/contact"
                 :active="request()->is('contact')"
@@ -43,6 +44,7 @@
                 >Contact</x-nav-links>
                 </div>
             </div>
+            
             </div>
             <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
@@ -90,8 +92,8 @@
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="/" class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
             
-            <a href="/about" class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
-                About
+            <a href="/jobs" class="{{ request()->is('jobs') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
+                Jobs
             </a>
 
             <a href="/contact" class="{{ request()->is('contact') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
