@@ -6,12 +6,18 @@
         <p class="text-2xl font-bold text-gray-800">Jobs Page</p>
     </x-slot:heading>
     <p  class="text-2xl font-medium flex justify-center items-center">Hello from the jobs page</p>
+    <br>
 
-    <ul class="list-disc list-inside">
+    <div class="space-y-2">
         @foreach ($jobs as $job)
-            <a href="/jobs/{{ $job['id'] }}">
-                <li class="text-blue-600 hover:underline"> <strong>{{ $job['title'] }}</strong> : Pays {{ $job['salary'] }} per year </li>
+            <a href="/jobs/{{ $job['id'] }}" class="block px-4 py-6 border border-gray-200 rounded-lg">
+                <div class="font-bold text-blue-500">
+                    {{ $job->employer->name }}
+                </div>
+                <div>
+                    <strong>{{ $job['title'] }}</strong>
+                </div>
             </a>
         @endforeach
-    </ul>
+    </div>
 </x-layout>
