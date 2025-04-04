@@ -22,6 +22,7 @@
                             id="email"
                             placeholder="Enter your Email"
                             type="email"
+                            :value='old("email")'
                             required/>
 
                             <x-form-error name="email"/>
