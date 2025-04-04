@@ -34,30 +34,25 @@
                 :active="request()->is('contact')"
                 :type="request()->is('contact') ? 'button' : 'a'"
                 >Contact</x-nav-links>
+                
                 </div>
             </div>
             
             </div>
             <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-                <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">View notifications</span>
-                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-                </svg>
-                </button>
 
-                <!-- Profile dropdown -->
-                <div class="relative ml-3">
-                <div>
-                    <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="size-8 rounded-full" src="https://media.licdn.com/dms/image/v2/D5603AQGkTlwH-Te5Rg/profile-displayphoto-shrink_800_800/B56ZQ_3FWKHoAg-/0/1736238192926?e=1749081600&v=beta&t=y0L11udMt-iwj7HWd9Q9WarpZsGgU8MHq5OJYEY_9bI" alt="">
-                    </button>
-                </div>
-                </div>
+                @guest
+                    <x-nav-links
+                    href="/login"
+                    :active="request()->is('login')"
+                    >Login</x-nav-links>
+
+                    <x-nav-links
+                    href="/register"
+                    :active="request()->is('register')"
+                    >Register</x-nav-links>
+                @endguest
             </div>
             </div>
             <div class="-mr-2 flex md:hidden">
@@ -90,6 +85,14 @@
 
             <a href="/contact" class="{{ request()->is('contact') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
                 Contact
+            </a>
+
+            <a href="/register" class="{{ request()->is('register') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
+                Register
+            </a>
+
+            <a href="/login" class="{{ request()->is('login') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-base font-medium">
+                Login
             </a>
 
         </div>
