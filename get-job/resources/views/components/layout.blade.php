@@ -7,7 +7,7 @@
     <title>get('/job')</title>
     @vite(['resources/js/app.js'])
 </head>
-<body class="bg-[#060606] text-[#f6f6f6]">
+<body class="bg-[#060606] text-[#f6f6f6] mb-10">
     <div class="px-10">
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
